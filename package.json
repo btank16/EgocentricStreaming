@@ -1,0 +1,13 @@
+{
+  "name": "@chameleon/expo-xr-android",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Android XR Expo Module",
+  "main": "index.ts",
+  "peerDependencies": {
+    "expo": "*",
+    "expo-file-system": "*",
+    "react": "*",
+    "react-native": "*"
+  }
+}

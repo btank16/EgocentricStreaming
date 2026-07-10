@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+      Android XR perception + camera permissions for @chameleon/expo-xr-android.
+      These are merged into the consuming app's manifest by Expo autolinking at
+      prebuild. All are "dangerous" runtime permissions: declared here so
+      checkSelfPermission() in ExpoXrAndroidModule reports accurate grant status,
+      and so the runtime permission request flow works for the pose/camera features.
+    -->
+    <uses-permission android:name="android.permission.HEAD_TRACKING" />
+    <uses-permission android:name="android.permission.HAND_TRACKING" />
+    <!--
+      SCENE_UNDERSTANDING_COARSE gates plane tracking (semantic FLOOR/WALL/… planes),
+      hit-testing, and anchor persistence — used to capture the session-origin floor
+      reference. It is a SEPARATE permission from _FINE (which gates the Depth API);
+      _FINE does NOT imply _COARSE, so both must be declared + granted independently.
+    -->
+    <uses-permission android:name="android.permission.SCENE_UNDERSTANDING_COARSE" />
+    <uses-permission android:name="android.permission.SCENE_UNDERSTANDING_FINE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+</manifest>
